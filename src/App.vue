@@ -1,26 +1,16 @@
 <template>
   <div id="app">
-    <div class="app-main">
+    <keep-alive exclude ="">
       <transition name="van-fade">
         <router-view/>
       </transition>
-    </div>
-    <div class="tab-bar van-hairline--top">
-      <router-link to="/" tag="div">
-        <span class="tab-label">首页</span>
-      </router-link>
-      <router-link to="/about" tag="div">
-        <span class="tab-label">我的押码</span>
-      </router-link>
-      <router-link to="/about" tag="div">
-        <span class="tab-label">个人中心</span>
-      </router-link>
-    </div>
-
+    </keep-alive>
+    <router-view name="menu" slot="bottom"/>
   </div>
 </template>
 
 <style lang="less">
+
   .app-main {
     height: calc(100vh - 100px)
   }
